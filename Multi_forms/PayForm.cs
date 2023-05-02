@@ -13,6 +13,7 @@ namespace Multi_forms
     public partial class PayForm : Form
     {
         SearchForm sf = new SearchForm();
+        public Form1 form;
         public PayForm()
         {
             InitializeComponent();
@@ -28,6 +29,18 @@ namespace Multi_forms
         {
             sf.textBox1.Text = "";
             sf.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Add(textBox2.Text + "مبلغ :" + textBox1.Text);
+            string t = textBox1.Text;
+            string y = textBox2.Text;
+            form.Box.Items.Add("Code daneshjooyi :" + t + " Mablagh: " + y);
+            this.Hide();
+            textBox1.Text = "";
+            textBox2.Text = "";
+            
         }
     }
 }
